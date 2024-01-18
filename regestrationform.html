@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--put this at the top of every html doc! so the browser knows what type of document its reading-->
+
+<html lang="en">
+<!--put this on every html doc! tells the browser hot to structure and interpret a part of the html doc. also, you should always put the lang element inside of this, its short for languege, and set it to english, en.-->
+	<head>
+	<!--you'll use this on every html doc also, its a container for data about data -->
+		<title>Registration Form</title>
+		<!--this is how you title your doc, important to tile every doc this way-->
+		<meta charset="UTF-8">
+		<!-- meta elements are used to specify page descriptions, the charset attribute specifies the cahractre encoding for the html doc, you should use charset="UTF-8" on all html docs-->
+		<link rel="stylesheet" href="registrationform.css">
+		<!-- the link element will allow us to link other documents to this one, the rel attribute specifies the relationship between the current document and the linked one, the href attribute specifies the URL of the page the link goes to, you'll use all of this elements/attributes on all of your html docs. *link element is self closing-->
+	</head>
+
+	<body>
+	<!--you'll use this on every html doc, its a container for everything that acutally shows up on your webpage-->
+		<h1>Registration Form</h1>
+		<!--h tags, heading tags, help organize your website, used to describe the contents below them-->
+		<p>Please fill out this form with the required information</p>
+		<!--p tag represents a paragraph -->
+		<form action="https://register-demo.freecodecamp.org" method="post">
+		<!--form elements are used as a container for different types of input elements, such as: text fields, checkboxes, radio buttons, etc. the action attribute is used here to define the action to be performed when the form element is submitted. the method attribute tells the web browser how to send form data to a server-->
+			<fieldset>
+			<!--used specificly in form elements the Field Set element is used to group related elements in the said form-->
+				<label for="first-name">Enter Your First Name: <input id="first-name" type="text" required /></label>
+				<!--the label tag is used to define a label for several elements-->
+        		<label for="last-name">Enter Your Last Name: <input id="last-name" type="text" required /></label>
+        		<!--the for attribute specifies which form element a label is bound to-->
+        		<label for="email">Enter Your Email: <input id="email" type="email" required /></label>
+        		<!--the input tag specifies an input field where the user can enter data-->
+        		<label for="new-password">Create a New Password: <input id="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+        		<!--the id attribute specifies a unique id for an html element-->
+
+        		<!--the type attribute is important for the browswer to know what kind of datat is should expect. if the type is not specified the browswer will defaul to text; the type attribute defines which type of input control to display -->
+
+        		<!--the required attribute inside all of the input elements specifies that the input fields must be filled out before submitting the form-->
+			</fieldset>
+			<fieldset>
+				<legend>Account type (required)</legend>
+        		<label for="personal-account"><input type="radio" name="account-type" id="personal-account" class="inline" checked /> Personal</label>
+        		<label for="business-account"><input type="radio" name="account-type" id="business-account" class="inline" /> Business</label>
+        		<!--the legend element is used to add a caption to a group of related form <input> elements that have been grouped together into a <fieldset>. a name attribute is used to specicify a name for an html element-->
+			</fieldset>
+			<fieldset>
+
+				<label for="profile-picture">Upload a profile picture:
+					<input type="file" id="profile-picture"></input>
+				</label>
+
+				<label for="age">Input youro age (years):
+					<input type="number" min="12" max="120" id="age"></input>
+				</label>
+
+				<label for="referrer">How did you hear about us?
+					<select id="referrer">
+						<option value="">(select one)</option>
+						<option value="1">freeCodeCamp News</option>
+						<option value="2">freeCodeCamp YouTube Channel</option>
+						<option value="3">freeCodeCamp Forum</option>
+						<option value="4">Other</option>
+					</select>
+					<!--the select element is used to create a drop down list the options are the options of the drop down menu, with the actual code calue as value="" and the on screen text nested inside the option element-->
+				</label>
+
+				<label for="bio">Provide a bio:
+					<textarea rows="3" cols="30" id="bio" placeholder="I like coding on the beach..."></textarea>
+					<!--textarea tag defines a multi line text input control, the rows and cols attribute adjust the size of the multi line text input (textarea). the placeholder attribute is the little text that appears in a text area before you start typing-->
+				</label>
+			</fieldset>
+
+			<label for="terms-and-conditions"><input id="terms-and-conditions" type="checkbox" class="inline" name="terms-and-conditions" required />I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</label>
+			<!--the a element (anchor element) with a href attribute creates a hyperlink to web pages, files, email addresses, ect-->
+
+			<input type="submit" value="Submit" name="submit"></input>
+			<!--this line of code defines a submit button which subits form values to a form-handler-->
+		</form>
+		
+	</body>
+
+</html>
